@@ -17,6 +17,7 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.5</spring-cloud.version>
 		<spring-cloud-alibaba.version>2.2.9.RELEASE</spring-cloud-alibaba.version>
+		<kyxs-cloud.version>1.0.0-SNAPSHOT</kyxs-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -38,6 +39,25 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.26</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+			<version>3.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kyxs.cloud</groupId>
+			<artifactId>kyxs-cloud-core-loadbalance</artifactId>
+			<version>${kyxs-cloud.version}</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

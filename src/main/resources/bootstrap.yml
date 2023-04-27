@@ -10,11 +10,25 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true # ?gateway????nacos?????
+          enabled: true
       routes:
-        - id: personnel_route # ?????
-          uri: lb://kyxs-cloud-service # lb????nacos??????????,?????????
+        - id: personnel_route
+          uri: lb://kyxs-personnel-service
           predicates:
-            - Path=/kyxs-cloud-service/** # ??????????1??
+            - Path=/kyxs-personnel-service/**
           filters:
-            - StripPrefix=1 # ??????
+            - StripPrefix=1
+        - id: outreach_route
+          uri: lb://kyxs-outreach-service
+          predicates:
+            - Path=/kyxs-outreach-service/**
+          filters:
+            - StripPrefix=1
+        - id: process_route
+          uri: lb://kyxs-process-service
+          predicates:
+            - Path=/kyxs-process-service/**
+          filters:
+            - StripPrefix=1
+    loadbalancer:
+      type: gateway #自定义负载均衡策略
